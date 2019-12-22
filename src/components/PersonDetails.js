@@ -66,11 +66,11 @@ class PersonDetails extends Component {
             <div className="container">
                 <div className="card-headers">
                     <div className="card-poster">
-                        {data.profile_path ? <img className="img-fluid" src={img_path + data.profile_path} alt={data.original_title} /> : <div className="no_image_cast"><i className="material-icons left">burst_mode</i>  </div>}
+                        {data.profile_path ? <img className="img-fluid" src={img_path + data.profile_path} alt={data.original_title} /> : <img className="no-image-person" src={noimage} alt={data.name} />}
                     </div>
                     <div className="card-content">
                         <h4>{(data.title) ? data.title : data.name}</h4>
-                        <p className="release"> <i className="fas fa-birthday-cake"></i> {moment((data.birthday) ? data.birthday : "").format('MMM DD, YYYY')} </p>
+                        <p className="release"> <i className="fas fa-birthday-cake"></i> {(data.birthday) ? moment(data.birthday).format('MMM DD, YYYY') : "Not Available" } </p>
 
                         <div className="card-overview mt-3">
                             <h5>Occupation</h5>
